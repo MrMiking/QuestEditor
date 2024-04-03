@@ -1,13 +1,7 @@
-﻿//
-// MainPage.xaml.cpp
-// Implémentation de la classe MainPage.
-//
-
-#include "pch.h"
+﻿#include "pch.h"
 #include "MainPage.xaml.h"
 
 using namespace QuestEditor;
-
 using namespace Platform;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
@@ -19,9 +13,16 @@ using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Media;
 using namespace Windows::UI::Xaml::Navigation;
 
-// Pour plus d'informations sur le modèle d'élément Page vierge, consultez la page https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+Quest* quest = new Quest();
 
 MainPage::MainPage()
 {
 	InitializeComponent();
+}
+
+void QuestEditor::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	String^ input = questID->Text;
+	wstring wsstr(input->Data());
+	quest->questID = std::stoi(wsstr);
 }

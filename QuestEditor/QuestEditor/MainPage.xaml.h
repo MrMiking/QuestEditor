@@ -1,21 +1,15 @@
-﻿//
-// MainPage.xaml.h
-// Déclaration de la classe MainPage.
-//
-
-#pragma once
+﻿#pragma once
 
 #include "MainPage.g.h"
+#include "Quest.h"
 
 namespace QuestEditor
 {
-	/// <summary>
-	/// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
-	/// </summary>
 	public ref class MainPage sealed
 	{
 	public:
 		MainPage();
-
+	private:
+		void Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }

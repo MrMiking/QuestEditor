@@ -6,9 +6,145 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="#000b1e">
 
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Border HorizontalAlignment="Stretch">
+            <StackPanel Margin="20" Background="#090c1d" BorderBrush="#690440" BorderThickness="2" CornerRadius="10" MinWidth="250">
+                <StackPanel Margin="20">
+                    <TextBlock Text="Quest List" Foreground="White" FontSize="40" FontWeight="Bold" FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <Button Content="Quest 1" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <Button Content="Quest 2" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Stretch"/>
+                </StackPanel>
+                <StackPanel Margin="10">
+                    <Button Content="+"  CornerRadius="10" BorderBrush="#690440" BorderThickness="2" Foreground="White" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="1" >
+            <StackPanel Margin="0,20,0,20" Background="#090c1d" BorderBrush="#690440" BorderThickness="2" CornerRadius="10">
+                <Grid MinHeight="800" MinWidth="600">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0">
+                        <StackPanel Margin="10" BorderBrush="#690440" BorderThickness="2" CornerRadius="10">
+                            <StackPanel Margin="20,20,20,0">
+                                <TextBlock Text="Quest Info" Foreground="White" FontSize="30" FontWeight="Bold" FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Type Quest ID" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <TextBox x:Name="questID" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                                <Button Content="Enter" Click="Button_Click" CornerRadius="15" Background="#FF6724FF" Foreground="White" FontFamily="Arial Black" FontWeight="Bold" FontSize="20" RequestedTheme="Light"/>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Type NPC ID" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <TextBox x:Name="npcID" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Type Quest Name" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <TextBox x:Name="questName" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="1">
+                        <StackPanel Margin="10" BorderBrush="#690440" BorderThickness="2" CornerRadius="10">
+                            <StackPanel Margin="20,20,20,0">
+                                <TextBlock Text="Item Info" Foreground="White" FontSize="30" FontWeight="Bold" FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Type Item ID" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <TextBox CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Type Item Name" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <TextBox Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="1" Grid.Column="1">
+                        <StackPanel Margin="10" BorderBrush="#690440" BorderThickness="2" CornerRadius="10">
+                            <StackPanel Margin="20,20,20,0">
+                                <TextBlock Text="Objectives" Foreground="White" FontSize="30" FontWeight="Bold" FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Select Objectives Type" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <DropDownButton BorderBrush="#103156" BorderThickness="2" CornerRadius="10" Background="#000b1e" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Stretch" FocusVisualPrimaryBrush="White" Foreground="White">
+                                    <TextBlock Foreground="White"/>
+                                </DropDownButton>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Type Quantity" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <TextBox Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="0" Grid.Column="1">
+                        <StackPanel Margin="10" BorderBrush="#690440" BorderThickness="2" CornerRadius="10">
+                            <StackPanel Margin="20,20,20,0">
+                                <TextBlock Text="Reward" Foreground="White" FontSize="30" FontWeight="Bold" FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Select Rewards Type" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <DropDownButton BorderBrush="#103156" BorderThickness="2" CornerRadius="10" Background="#000b1e" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Stretch" FocusVisualPrimaryBrush="White" Foreground="White">
+                                    <TextBlock Foreground="White"/>
+                                </DropDownButton>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Type Rewards Quantity" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <TextBox Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Select Reward Item" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <DropDownButton BorderBrush="#103156" BorderThickness="2" CornerRadius="10" Background="#000b1e" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Stretch" FocusVisualPrimaryBrush="White" Foreground="White">
+                                    <TextBlock Foreground="White"/>
+                                </DropDownButton>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Row="2" Grid.ColumnSpan="2">
+                        <StackPanel Margin="10" BorderBrush="#690440" BorderThickness="2" CornerRadius="10">
+                            <StackPanel Margin="20,20,20,0">
+                                <TextBlock Text="Dialogs" Foreground="White" FontSize="40" FontWeight="Bold" FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Type Pre-Quest Dialog" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <TextBox Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Type Quest-In-Progress Dialog" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <TextBox Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                            </StackPanel>
+                            <StackPanel Margin="10">
+                                <TextBlock Margin="5" Text="Type Post-Quest Dialog" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
+                                <TextBox Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="2" >
+            <StackPanel Margin="20" Background="#090c1d" BorderBrush="#690440" BorderThickness="2" CornerRadius="10">
+                <StackPanel Margin="20">
+                    <TextBlock Text="Display" Foreground="White" FontSize="40" FontWeight="Bold" FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>

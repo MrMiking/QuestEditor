@@ -105,15 +105,15 @@
                             </StackPanel>
                             <StackPanel Margin="10">
                                 <TextBlock Margin="5" Text="Type Pre-Quest Dialog" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
-                                <TextBox Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                                <TextBox x:Name="preQuestDialog" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" TextChanged="preQuestDialog_Changed"/>
                             </StackPanel>
                             <StackPanel Margin="10">
                                 <TextBlock Margin="5" Text="Type Quest-In-Progress Dialog" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
-                                <TextBox Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                                <TextBox x:Name="questInProgressDialog" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" TextChanged="questInProgressDialog_Changed"/>
                             </StackPanel>
                             <StackPanel Margin="10">
                                 <TextBlock Margin="5" Text="Type Post-Quest Dialog" Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="15"/>
-                                <TextBox Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20"/>
+                                <TextBox x:Name="postQuestDialog" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" TextChanged="postQuestDialog_Changed"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -139,18 +139,18 @@
                         <TextBlock Text="dialog" Foreground="White" FontSize="30" FontWeight="Bold" FontFamily="Arial Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Margin="10">
-                        <TextBlock Margin="5" TextWrapping="Wrap" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" 
+                        <TextBlock x:Name="dialogText" Margin="5" TextWrapping="Wrap" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" 
                                    Foreground="White" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" Height="400"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Margin="10">
-                    <Button Content="Talk to NPC" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Stretch"/>
+                    <Button x:Name="talkToNPC" Content="Talk to NPC" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Stretch" Click="talkToNPC_Button"/>
                 </StackPanel>
                 <StackPanel Margin="10">
-                    <Button Content="ReTalk to NPC" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Stretch"/>
+                    <Button x:Name="retalkToNPC" Content="ReTalk to NPC" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Stretch" Click="retalkToNPC_Button"/>
                 </StackPanel>
                 <StackPanel Margin="10">
-                    <Button Content="End Quest" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Stretch"/>
+                    <Button x:Name="endQuest" Content="End Quest" Foreground="White" CornerRadius="10" Background="#000b1e" BorderBrush="#103156" BorderThickness="2" FocusVisualPrimaryBrush="Black" FontWeight="Bold" FontFamily="Arial Black" FontSize="20" HorizontalAlignment="Stretch" Click="endQuest_Button"/>
                 </StackPanel>
             </StackPanel>
         </Border>

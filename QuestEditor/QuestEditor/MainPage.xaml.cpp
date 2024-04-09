@@ -28,12 +28,10 @@ void QuestEditor::MainPage::questID_input(Platform::Object^ sender, Windows::UI:
 	quest->questID = quest->PlatformToString(questID->Text);
 }
 
-
 void QuestEditor::MainPage::npcID_Input(Platform::Object^ sender, Windows::UI::Xaml::Controls::TextChangedEventArgs^ e)
 {
 	quest->npcID = quest->PlatformToString(npcID->Text);
 }
-
 
 void QuestEditor::MainPage::questName_input(Platform::Object^ sender, Windows::UI::Xaml::Controls::TextChangedEventArgs^ e)
 {
@@ -50,8 +48,6 @@ void QuestEditor::MainPage::rewardType_Changed(Platform::Object^ sender, Windows
 	}
 }
 
-
-
 void QuestEditor::MainPage::objectiveType_Changed(Platform::Object^ sender, Windows::UI::Xaml::Controls::SelectionChangedEventArgs^ e)
 {
 	if (safe_cast<ComboBoxItem^>(objectiveType->SelectedItem)->Content->ToString() == "Slay") {
@@ -65,14 +61,58 @@ void QuestEditor::MainPage::objectiveType_Changed(Platform::Object^ sender, Wind
 	}
 }
 
-
 void QuestEditor::MainPage::objectiveQuantity_input(Platform::Object^ sender, Windows::UI::Xaml::Controls::TextChangedEventArgs^ e)
 {
 	quest->objectiveQuantity = quest->PlatformToString(objectiveQuantity->Text);
 }
 
-
 void QuestEditor::MainPage::rewardQuantity_input(Platform::Object^ sender, Windows::UI::Xaml::Controls::TextChangedEventArgs^ e)
 {
 	quest->rewardQuantity = quest->PlatformToString(rewardQuantity->Text);
+}
+
+void QuestEditor::MainPage::talkToNPC_Button(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	if (quest->started == false) {
+		dialogText->Text = quest->convertFromString(quest->preQuestDialog);
+		quest->started = true;
+	}
+}
+
+void QuestEditor::MainPage::retalkToNPC_Button(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	if (quest->started == true) {
+		dialogText->Text = quest->convertFromString(quest->questInProgressDialog);
+	}
+}
+
+void QuestEditor::MainPage::endQuest_Button(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	if (quest->started == true) {
+		dialogText->Text = quest->convertFromString(quest->postQuestDialog);
+		if (quest->rewardType == "Money") {
+			player->money += stoi(quest->rewardQuantity);
+			playerMoney->Text = "Money = " + player->money.ToString();
+		}
+		else if (quest->rewardType == "Experience") {
+			player->experience += stoi(quest->rewardQuantity);
+			playerExperience->Text = "Experience = " + player->experience.ToString();
+		}
+		quest->started = false;
+	}
+}
+
+void QuestEditor::MainPage::preQuestDialog_Changed(Platform::Object^ sender, Windows::UI::Xaml::Controls::TextChangedEventArgs^ e)
+{
+	quest->preQuestDialog = quest->PlatformToString(preQuestDialog->Text);
+}
+
+void QuestEditor::MainPage::questInProgressDialog_Changed(Platform::Object^ sender, Windows::UI::Xaml::Controls::TextChangedEventArgs^ e)
+{
+	quest->questInProgressDialog = quest->PlatformToString(questInProgressDialog->Text);
+}
+
+void QuestEditor::MainPage::postQuestDialog_Changed(Platform::Object^ sender, Windows::UI::Xaml::Controls::TextChangedEventArgs^ e)
+{
+	quest->postQuestDialog = quest->PlatformToString(postQuestDialog->Text);
 }

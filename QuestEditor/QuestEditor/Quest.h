@@ -8,7 +8,7 @@ public:
 	string npcID;
 	string questName;
 
-	bool started;
+	bool started = false;
 
 	string rewardType;
 	string rewardQuantity;

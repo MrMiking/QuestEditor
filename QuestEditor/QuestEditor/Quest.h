@@ -1,21 +1,25 @@
 #pragma once
-#include "Item.h"
+#include "Player.h"
 
 class Quest
 {
 public:
-	int questID;
-	int npcID;
+	string questID;
+	string npcID;
 	string questName;
 
-	enum rewardType { Money, Experience };
-	int rewardQuantity;
-	Item rewardItem;
+	bool started;
 
-	enum objectiveType { Slay, Loot, Save };
-	int objectiveQuantity;
+	string rewardType;
+	string rewardQuantity;
+
+	string objectiveType;
+	string objectiveQuantity;
 
 	string preQuestDialog;
 	string questInProgressDialog;
 	string postQuestDialog;
+
+	Platform::String^ convertFromString(const std::string& input);
+	string PlatformToString(Platform::String^ pstring);
 };

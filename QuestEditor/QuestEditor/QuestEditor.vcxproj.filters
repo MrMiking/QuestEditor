@@ -20,7 +20,7 @@
     <ClCompile Include="Quest.cpp">
       <Filter>Class</Filter>
     </ClCompile>
-    <ClCompile Include="Item.cpp">
+    <ClCompile Include="Player.cpp">
       <Filter>Class</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="Quest.h">
       <Filter>Class</Filter>
     </ClInclude>
-    <ClInclude Include="Item.h">
+    <ClInclude Include="Player.h">
       <Filter>Class</Filter>
     </ClInclude>
   </ItemGroup>
